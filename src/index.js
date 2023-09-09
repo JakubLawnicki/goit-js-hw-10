@@ -36,13 +36,14 @@ select.addEventListener('change', e => {
         .then(data => {
           data.forEach(cat => {
             if (currentValue === cat.id) {
-              const catName = document.createElement('h1');
-              const catDescr = document.createElement('p');
-              const catTemp = document.createElement('span');
-              catInfo.append(catName, catDescr, catTemp);
-              catName.textContent = `${cat.name}`;
-              catDescr.textContent = `${cat.description}`;
-              catTemp.textContent = `Temperament: ${cat.temperament}`;
+              catInfo.insertAdjacentHTML(
+                'beforeend',
+                `<div class="content">
+              <h1>${cat.name}</h1>
+              <p class="descr">${cat.description}</p>
+              <p class="temp"><span class="temp-item">Temperament:</span> ${cat.temperament}</p>
+              </div`
+              );
             }
           });
         })
