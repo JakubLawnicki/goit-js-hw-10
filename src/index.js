@@ -1,6 +1,6 @@
 import { fetchBreeds } from './cat-api.js';
 import { fetchCatByBreed } from './cat-api.js';
-import key from './cat-api.js';
+import { key } from './cat-api.js';
 
 const select = document.querySelector('.breed-select');
 const catInfo = document.querySelector('.cat-info');
