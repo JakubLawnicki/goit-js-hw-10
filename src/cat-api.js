@@ -1,9 +1,9 @@
-import axios from 'axios';
-axios.defaults.headers.common['x-api-key'] =
-  'live_y4UBJpWFDyRXMCTGfGBilRBknPor8oQfujHTprh9Wc5GLEprvfb2C3TWjhs6htue';
+// import axios from 'axios';
+// axios.defaults.headers.common['x-api-key'] =
+//   'live_y4UBJpWFDyRXMCTGfGBilRBknPor8oQfujHTprh9Wc5GLEprvfb2C3TWjhs6htue';
 const loader = document.querySelector('.loader');
 const error = document.querySelector('.error');
-const key =
+export const key =
   'api_key=live_y4UBJpWFDyRXMCTGfGBilRBknPor8oQfujHTprh9Wc5GLEprvfb2C3TWjhs6htue';
 
 export function fetchBreeds() {
