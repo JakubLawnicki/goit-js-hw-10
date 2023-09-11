@@ -3,14 +3,14 @@ axios.defaults.headers.common['x-api-key'] =
   'live_y4UBJpWFDyRXMCTGfGBilRBknPor8oQfujHTprh9Wc5GLEprvfb2C3TWjhs6htue';
 const loader = document.querySelector('.loader');
 const error = document.querySelector('.error');
+const key =
+  'api_key=live_y4UBJpWFDyRXMCTGfGBilRBknPor8oQfujHTprh9Wc5GLEprvfb2C3TWjhs6htue';
 
 export function fetchBreeds() {
   loader.classList.add('loader-inactive');
   error.classList.add('error-inactive');
   return new Promise(resolve => {
-    fetch(
-      'https://api.thecatapi.com/v1/breeds?api_key=live_y4UBJpWFDyRXMCTGfGBilRBknPor8oQfujHTprh9Wc5GLEprvfb2C3TWjhs6htue'
-    )
+    fetch(`https://api.thecatapi.com/v1/breeds?${key}`)
       .then(response => {
         return response.json();
       })
@@ -25,7 +25,7 @@ export function fetchCatByBreed(breedId) {
   loader.classList.remove('loader-inactive');
   return new Promise(resolve => {
     fetch(
-      `https://api.thecatapi.com/v1/images/search?breeds_ids=${breedId}&api_key=live_y4UBJpWFDyRXMCTGfGBilRBknPor8oQfujHTprh9Wc5GLEprvfb2C3TWjhs6htue`
+      `https://api.thecatapi.com/v1/images/search?breeds_ids=${breedId}&${key}`
     )
       .then(response => response.json())
       .then(catItem => {

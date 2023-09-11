@@ -1,5 +1,6 @@
 import { fetchBreeds } from './cat-api.js';
 import { fetchCatByBreed } from './cat-api.js';
+import key from './cat-api.js';
 
 const select = document.querySelector('.breed-select');
 const catInfo = document.querySelector('.cat-info');
@@ -29,9 +30,7 @@ select.addEventListener('change', e => {
       catImage.setAttribute('height', '500');
     })
     .then(
-      fetch(
-        'https://api.thecatapi.com/v1/breeds?api_key=live_y4UBJpWFDyRXMCTGfGBilRBknPor8oQfujHTprh9Wc5GLEprvfb2C3TWjhs6htue'
-      )
+      fetch(`https://api.thecatapi.com/v1/breeds?${key}`)
         .then(response => response.json())
         .then(data => {
           data.forEach(cat => {
